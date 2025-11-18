@@ -17,22 +17,54 @@
 
 @layer base {
     .h1 {
-      @apply text-[75px] font-casa-grande font-extrabold uppercase leading-[0.9] tracking-[-0.04em];
+      @apply text-[44px] font-casa-grande font-extrabold uppercase leading-[0.85] tracking-[-0.04em];
     }
   
     .h2 {
-      @apply text-[44px] font-extrabold leading-[0.85] tracking-[-0.05em];
+      @apply text-[44px] font-casa-grande font-extrabold leading-[0.85] tracking-[-0.05em];
     }
   
     .h3 {
-      @apply text-[32px] font-extrabold leading-[0.9] tracking-[-0.01em];
+      @apply text-[32px] font-casa-grande font-extrabold leading-[0.9] tracking-[-0.01em];
     }
   
     .h4 {
-      @apply text-[24px] font-black uppercase leading-[0.85] tracking-[-0.01em];
+      @apply text-[24px] font-casa-grande font-black uppercase leading-[0.85] tracking-[-0.01em];
+    }
+
+    .text-large {
+      @apply text-[24px] font-strawford font-bold leading-[1.29];
+    }
+
+    .text-medium {
+      @apply text-[18px] font-strawford font-bold leading-[1.4] tracking-[0.03em];
+    }
+
+    .text-small {
+      @apply text-[16px] font-strawford font-medium leading-[1.1];
+    }
+
+    .text-extra-small {
+      @apply text-[16px] font-strawford font-medium leading-[1.4] tracking-[0.03em];
+    }
+
+    .text-shadow-1 {
+      text-shadow: 4.57px 6.09px 0 var(--alabaster);
+    }
+
+    .text-shadow-2 {
+      text-shadow: 8px 8px 1px var(--alabaster);
+    }
+
+    .text-shadow-3 {
+      text-shadow: 5px 6px 1px var(--alabaster);
+    }
+
+    .text-shadow-4 {
+      text-shadow: 3px 4px 0 var(--alabaster);
     }
   
-    @screen md {
+    @media (min-width: 768px) {
       .h1 {
         @apply text-[75px] leading-[0.9];
       }
@@ -47,6 +79,14 @@
   
       .h4 {
         @apply text-[35px];
+      }
+
+      .text-medium {
+        @apply text-[24px];
+      }
+
+      .text-small {
+        @apply text-[18px] font-bold leading-[1.4] tracking-[0.03em];
       }
     }
   }

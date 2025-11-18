@@ -7,7 +7,7 @@ import localFont from "next/font/local";
 //   display: "swap",
 // });
 export const casaGrande = localFont({
-  src: "public/fonts/casagrande/casa-grande.woff2",
+  src: "../public/fonts/casagrande/casa-grande.woff2",
   variable: "--font-casa-grande",
   weight: "900",
   preload: true,
@@ -20,7 +20,7 @@ export const strawFord = localFont({
   display: "swap",
   src: [
     {
-      path: "public/fonts/strawford/Strawford-Black.woff2",
+      path: "../public/fonts/strawford/Strawford-Black.woff2",
       weight: "900",
       style: "normal",
     },
@@ -30,7 +30,7 @@ export const strawFord = localFont({
     //   style: "italic",
     // },
     {
-      path: "../../public/fonts/strawford/Strawford-Bold.woff2",
+      path: "../public/fonts/strawford/Strawford-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -60,7 +60,7 @@ export const strawFord = localFont({
     //   style: "italic",
     // },
     {
-      path: "../../public/fonts/strawford/Strawford-Medium.woff2",
+      path: "../public/fonts/strawford/Strawford-Medium.woff2",
       weight: "500",
       style: "normal",
     },
@@ -70,7 +70,7 @@ export const strawFord = localFont({
     //   style: "italic",
     // },
     {
-      path: "../../public/fonts/strawford/Strawford-Regular.woff2",
+      path: "../public/fonts/strawford/Strawford-Regular.woff2",
       weight: "400",
       style: "normal",
     },
