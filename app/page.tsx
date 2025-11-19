@@ -26,11 +26,8 @@ const guideNavigation = [
     ],
   },
   { id: "color-system", label: "Color" },
-<<<<<<< HEAD
   { id: "icons", label: "Icons" },
-=======
   { id: "button-system", label: "Button" },
->>>>>>> 6625463 (Primary Button addition)
 ];
 
 export default function Home() {
