@@ -346,9 +346,62 @@ export default function Home() {
 
             </div>
             </section>
-          <section id="button-system" className="space-y-4 rounded-2xl border border-zinc-200 bg-dark-purple p-6 shadow-sm">
-            <Button variant="primary" buttonText={"Take The House Quiz"}/>
-          </section>
+            <section id="button-system" className="space-y-4 rounded-2xl border border-zinc-200 bg-white/80 p-6 shadow-sm">
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.5em] text-zinc-500">
+                    Button System
+                  </p>
+                  <p className="text-medium text-zinc-900">
+                    Interactive Components
+                  </p>
+                  <p className="text-sm text-zinc-500">
+                    Primary and secondary button variants with custom backgrounds and icons.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                {/* Primary Button - Default */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-zinc-900">Primary - Default</p>
+                      <p className="text-xs text-zinc-500">Ivory background with dark text</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center rounded-xl border border-zinc-200 bg-dark-purple p-8">
+                    <Button variant="primary" buttonText={"Take The House Quiz"} textColor={"cloud-brust"}/>
+                  </div>
+                </div>
+
+                {/* Primary Button - Custom */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-zinc-900">Primary - Custom Colors</p>
+                      <p className="text-xs text-zinc-500">Sera blue background with ivory text</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center rounded-xl border border-zinc-200 bg-dark-purple p-8">
+                    <Button variant="primary" buttonText={"Take The House Quiz"} bgColor={"sera-blue"} iconColor={"ivory"} textColor={"ivory"}/>
+                  </div>
+                </div>
+
+                {/* Secondary Button */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-zinc-900">Secondary</p>
+                      <p className="text-xs text-zinc-500">Outlined variant with ivory text</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center rounded-xl border border-zinc-200 bg-dark-purple p-8">
+                    <Button variant="secondary" buttonText={"Take The House Quiz"} iconColor={"ivory"}/>
+                  </div>
+                </div>
+              </div>
+            </section>
         </div>
       </main>
     </div>

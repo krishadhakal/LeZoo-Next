@@ -55,6 +55,7 @@
   --tiga-red: #cf0b05;
   --transparent: #fff0;
   --white: #ffffff;
+  --light-red-100: #fc4382;
 }
 
 .dark {
@@ -118,9 +119,10 @@
   --color-tiga-red: var(--tiga-red);
   --color-transparent: var(--transparent);
   --color-white: var(--white);
+  --color-light-red-100: var(--light-red-100);
 }
 
-@layer utilities {
+/* @layer utilities {
   .bg-alabaster {
     background-color: var(--alabaster);
   }
@@ -451,4 +453,4 @@
   .text-white {
     color: var(--white);
   }
-}
+} */

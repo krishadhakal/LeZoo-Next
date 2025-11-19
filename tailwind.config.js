@@ -1,4 +1,4 @@
-const plugin = require("tailwindcss/plugin");
+/** @type {import('tailwindcss').Config} */
 
 module.exports = {
   content: [
@@ -49,5 +49,11 @@ module.exports = {
         { values: theme("textStrokeWidth") }
       );
     }),
+  ],
+  safelist: [
+    {
+      pattern: /fill-.+/,
+      variants: ['group-hover'],
+    }
   ],
 };
