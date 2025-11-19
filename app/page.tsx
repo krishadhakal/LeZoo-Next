@@ -1,4 +1,18 @@
 import { colorSwatches } from "./color";
+import {
+  ButtonArrowRight,
+  LeftArrowCircled,
+  RightArrowCircled,
+  RightArrowDashBlack,
+  RightArrowDash,
+  RightArrowDashBlue,
+  DownArrow,
+  Instagram,
+  Tiktok,
+  Twitter,
+  Discord,
+  SmsIcon,
+} from "../components/icons/icons";
 
 const guideNavigation = [
   {
@@ -11,6 +25,7 @@ const guideNavigation = [
     ],
   },
   { id: "color-system", label: "Color" },
+  { id: "icons", label: "Icons" },
 ];
 
 export default function Home() {
@@ -189,6 +204,144 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          <section id="icons" className="space-y-4 rounded-2xl border border-zinc-200 bg-white/80 p-6 shadow-sm">
+            <div className="flex items-end justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.5em] text-zinc-500">
+                  Icon System
+                </p>
+                <p className="text-medium text-zinc-900">
+                  SVG Icons & Assets
+                </p>
+                <p className="text-sm text-zinc-500">
+                  Scalable vector graphics for UI elements and navigation.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <ButtonArrowRight />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Button Arrow Right</p>
+                  <p className="text-xs text-zinc-500">9×17</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <LeftArrowCircled width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Left Arrow Circled</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <RightArrowCircled width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Right Arrow Circled</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <RightArrowDashBlack />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Right Arrow Dash Black</p>
+                  <p className="text-xs text-zinc-500">10×17</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <RightArrowDash width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Right Arrow Dash</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <RightArrowDashBlue width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Right Arrow Dash Blue</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <DownArrow width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Down Arrow</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <Instagram width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Instagram</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <Tiktok width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Tiktok</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <Twitter width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Twitter</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
+                  <Discord width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">Discord</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100 text-white">
+                  <SmsIcon width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">SMS</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
             </div>
           </section>
         </div>
