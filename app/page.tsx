@@ -1,3 +1,4 @@
+import { Button } from "@/components/Button/Button";
 import { colorSwatches } from "./color";
 import {
   ButtonArrowRight,
@@ -25,7 +26,11 @@ const guideNavigation = [
     ],
   },
   { id: "color-system", label: "Color" },
+<<<<<<< HEAD
   { id: "icons", label: "Icons" },
+=======
+  { id: "button-system", label: "Button" },
+>>>>>>> 6625463 (Primary Button addition)
 ];
 
 export default function Home() {
@@ -343,6 +348,9 @@ export default function Home() {
               </div>
 
             </div>
+            </section>
+          <section id="button-system" className="space-y-4 rounded-2xl border border-zinc-200 bg-dark-purple p-6 shadow-sm">
+            <Button variant="primary" buttonText={"Take The House Quiz"}/>
           </section>
         </div>
       </main>
