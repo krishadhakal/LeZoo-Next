@@ -50,10 +50,4 @@ module.exports = {
       );
     }),
   ],
-  safelist: [
-    {
-      pattern: /fill-.+/,
-      variants: ['group-hover'],
-    }
-  ],
 };

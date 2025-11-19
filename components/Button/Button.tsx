@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 type ButtonProps = {
-  variant: string;
+  variant: "primary" | "secondary";
   buttonText: string;
   bgColor?: string;
   bgColorHover?: string;
