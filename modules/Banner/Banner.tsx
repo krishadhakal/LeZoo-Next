@@ -6,7 +6,7 @@ export const Banner = () => {
       <div className="container-xl mx-auto px-6 py-6 grid items-center justify-center relative z-1">
 
         {/* Background Images - Responsive */}
-        <div style={{ gridArea: '1 / 1 / 1 / 1' }}>
+        <div className="col-start-1 col-end-1 row-start-1 row-end-1">
           <picture>
             <source media="(min-width: 1024px)" srcSet="/images/banner.webp" />
             <source media="(min-width: 768px)" srcSet="/images/banner-tablet.webp" />
@@ -19,7 +19,7 @@ export const Banner = () => {
           </picture>
         </div>
 
-        <div style={{ gridArea: '1 / 1 / 1 / 1' }}>
+        <div className="col-start-1 col-end-1 row-start-1 row-end-1">
           {/* Headline */}
           <h4 className="text-large text-white text-center mb-12 lg:mb-5">
             What is Le Zoo?
