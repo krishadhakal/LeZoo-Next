@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Instagram, Tiktok, Discord, Twitter, SmsIcon } from '../Icons/Icons';
+import { Instagram, Tiktok, Discord, Twitter, SmsIcon } from "@/components/Icons/Icons";
 
 export const Footer = () => {
   return (

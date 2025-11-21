@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Leadspace() {
   return (
-    <div className="min-h-[800px]">
+    <div>
       {/* Hero / Leadspace Section */}
       <section className="relative grid justify-center overflow-hidden max-[991px]:min-h-[80vh] min-h-[800px]">
         {/* Background Image */}
