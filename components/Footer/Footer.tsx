@@ -5,7 +5,7 @@ import { Instagram, Tiktok, Discord, Twitter, SmsIcon } from "@/components/Icons
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-rich-black-5 px-6 py-12 lg:px-16 lg:py-20">
+    <footer className="w-full bg-rich-black-5 px-6 py-12 lg:px-16 lg:py-20 relative z-1">
       <div className="max-w-[1440px] mx-auto">
         {/* Mobile Layout */}
         <div className="lg:hidden">

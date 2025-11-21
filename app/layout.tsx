@@ -31,7 +31,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${casaGrande.variable} ${strawFord.variable} antialiased`}
       >
         <Header />
-        {children}
+        <div className="bg-raisin-black-2">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

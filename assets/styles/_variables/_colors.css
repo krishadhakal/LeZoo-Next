@@ -57,6 +57,7 @@
   --transparent: #fff0;
   --white: #ffffff;
   --light-red-100: #fc4382;
+  --raisin-black-2: #1b1b28;
 }
 
 .dark {
@@ -121,4 +122,5 @@
   --color-transparent: var(--transparent);
   --color-white: var(--white);
   --color-light-red-100: var(--light-red-100);
+  --color-raisin-black-2: var(--raisin-black-2);
 }

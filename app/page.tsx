@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button/Button";
 import { DiscordBlueBg } from "@/components/Icons/Icons";
 import { Overlay } from "@/components/Overlay/Overlay";
+import { Banner } from "@/modules/Banner/Banner";
 import Leadspace from "@/modules/Leadspace/Leadspace";
 import Image from "next/image";
 import type { CSSProperties } from "react";
@@ -16,6 +17,7 @@ export default function Home() {
           <DiscordBlueBg className="w-[45px] h-[45px]" />
         </a>
       </section>
+      <Banner/>
     </>
   );
 }
