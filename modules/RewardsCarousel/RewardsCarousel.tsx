@@ -86,7 +86,7 @@ export const RewardsCarousel = () => {
         </div>
 
         {/* Mobile & Tablet - Swiper */}
-        <div className="xl:hidden overflow-visible flex justify-center">
+        <div className="xl:hidden overflow-hidden flex justify-center">
           <Swiper
             loop={true}
             centeredSlides={true}
