@@ -53,14 +53,14 @@ export const RightArrowCircled: React.FC<IconProps> = ({
   />
 );
 
-export const RightArrowDashBlack: React.FC<IconProps> = ({
+export const RightArrowWhite: React.FC<IconProps> = ({
   className,
   width = 10,
   height = 17,
   alt = "Right Arrow Dash Black",
 }) => (
   <Image
-    src="/svg/right-arrow-dash-black.svg"
+    src="/svg/right-arrow-white.svg"
     width={width}
     height={height}
     alt={alt}
@@ -246,7 +246,7 @@ export const Icons = {
   ButtonArrowRight,
   LeftArrowCircled,
   RightArrowCircled,
-  RightArrowDashBlack,
+  RightArrowWhite,
   RightArrowDash,
   RightArrowDashBlue,
   DownArrow,

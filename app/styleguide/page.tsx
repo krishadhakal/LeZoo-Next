@@ -4,7 +4,7 @@ import {
   ButtonArrowRight,
   LeftArrowCircled,
   RightArrowCircled,
-  RightArrowDashBlack,
+  RightArrowWhite,
   RightArrowDash,
   RightArrowDashBlue,
   DownArrow,
@@ -259,10 +259,10 @@ export default function Styleguide() {
 
               <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100">
-                  <RightArrowDashBlack />
+                  <RightArrowWhite />
                 </div>
                 <div className="text-center">
-                  <p className="text-sm font-medium text-zinc-900">Right Arrow Dash Black</p>
+                  <p className="text-sm font-medium text-zinc-900">Right Arrow White</p>
                   <p className="text-xs text-zinc-500">10×17</p>
                 </div>
               </div>

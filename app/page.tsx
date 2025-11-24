@@ -2,6 +2,7 @@ import { Button } from "@/components/Button/Button";
 import { DiscordBlueBg } from "@/components/Icons/Icons";
 import { Overlay } from "@/components/Overlay/Overlay";
 import { Banner } from "@/modules/Banner/Banner";
+import { FiftyFiftySection } from "@/modules/FiftyFiftySection/FiftyFiftySection";
 import Leadspace from "@/modules/Leadspace/Leadspace";
 import { RewardsCarousel } from "@/modules/RewardsCarousel/RewardsCarousel";
 import Image from "next/image";
@@ -20,6 +21,7 @@ export default function Home() {
       </section>
       <Banner/>
       <RewardsCarousel />
+      <FiftyFiftySection />
     </>
   );
 }
