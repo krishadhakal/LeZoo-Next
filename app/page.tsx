@@ -5,6 +5,7 @@ import { Banner } from "@/modules/Banner/Banner";
 import { FiftyFiftySection } from "@/modules/FiftyFiftySection/FiftyFiftySection";
 import Leadspace from "@/modules/Leadspace/Leadspace";
 import { RewardsCarousel } from "@/modules/RewardsCarousel/RewardsCarousel";
+import { ThreeCards } from "@/modules/ThreeCards/ThreeCards";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
@@ -21,6 +22,7 @@ export default function Home() {
       </section>
       <Banner/>
       <RewardsCarousel />
+      <ThreeCards />
       <FiftyFiftySection />
     </>
   );
