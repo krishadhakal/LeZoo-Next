@@ -27,10 +27,10 @@ export default function Home() {
       </section>
       <Banner />
       <RewardsCarousel />
+      <RolesCarousel />
       <ThreeCards />
       <HowItWorks />
       <FiftyFiftySection />
-      <RolesCarousel />
       <TabbedFaq/>
     </>
   );

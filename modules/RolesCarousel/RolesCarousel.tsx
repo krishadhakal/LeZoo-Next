@@ -73,7 +73,7 @@ export const RolesCarousel = () => {
   };
 
   return (
-    <section className="relative bg-raisin-black-2 py-16 lg:py-28 overflow-hidden">
+    <section className="relative bg-raisin-black-2 py-16 lg:py-28">
       <style jsx global>{`
         .park-role-swiper .swiper-slide {
           opacity: 0;
@@ -99,7 +99,7 @@ export const RolesCarousel = () => {
           border-radius: 4px;
         }
       `}</style>
-      <div className="container-xl mx-auto max-w-[1400px] px-6">
+      <div className="container-xl mx-auto max-w-[1400px] px-6 relative z-1">
         <div className="flex flex-col lg:flex-row gap-14 xl:gap-24 items-center">
           {/* Left Column - Swiper */}
           <div className="w-full lg:w-1/2 flex flex-col items-center gap-8">
@@ -190,14 +190,15 @@ export const RolesCarousel = () => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 opacity-20 mix-blend-screen">
-        <Image
-          src="/images/leadpace-strokes.webp"
-          alt="Strokes texture"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
+      <div className="pointer-events-none absolute -top-[20%]">
+        <picture>
+          <source media="(min-width: 768px)" srcSet="/images/park-bg.webp" />
+          <img
+            src="/images/park-bg-mob.webp"
+            alt="Park background texture"
+            className="w-full h-full object-cover"
+          />
+        </picture>
       </div>
     </section>
   );

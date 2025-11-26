@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+      <header className="fixed lg:absolute top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="container-xl mx-auto ps-6 pe-6 lg:pe-[97px] py-4 md:py-6">
           <div className="flex items-center justify-between lg:justify-start relative">
             {/* Hamburger Menu - Hidden on desktop, left on tablet, right on mobile */}
