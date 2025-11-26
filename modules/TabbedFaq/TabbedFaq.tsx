@@ -96,11 +96,19 @@ const ChevronIcon = ({ open }: { open: boolean }) => (
 
 export const TabbedFaq = () => {
   const [activeTab, setActiveTab] = useState<string>(faqCategories[0].id);
+
+  // Initialize all FAQs as open for each category
+  const initialAccordionState = useMemo(() => {
+    const state: Record<string, number[]> = {};
+    faqCategories.forEach((category) => {
+      state[category.id] = category.faqs.map((_, index) => index);
+    });
+    return state;
+  }, []);
+
   const [accordionState, setAccordionState] = useState<
     Record<string, number[]>
-  >({
-    [faqCategories[0].id]: [0],
-  });
+  >(initialAccordionState);
 
   const activeCategory = useMemo(
     () =>
@@ -128,9 +136,16 @@ export const TabbedFaq = () => {
   return (
     <section className="relative bg-raisin-black-2 py-16 lg:py-28 overflow-hidden">
       <div className="container-xl mx-auto max-w-[1400px] px-6 relative z-10">
+        {/* FAQ Heading - Shown above tabs on mobile/tablet, inside content area on desktop */}
+        <div className="mb-8 lg:mb-0 lg:hidden">
+          <div className="uppercase text-blueberry h2 text-stroke" style={{ textShadow: "4.57px 6.09px #eeebe2" }}>
+            FAQ
+          </div>
+        </div>
+
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
           <div className="lg:w-1/4">
-            <div className="flex lg:gap-4 bg-dark-indigo lg:bg-none overflow-x-auto rounded-[50px] lg:flex-col lg:overflow-visible lg:gap-5 lg:pb-0 lg:sticky lg:top-32">
+            <div className="flex lg:gap-4 lg:bg-none overflow-x-auto rounded-[50px] lg:flex-col lg:overflow-visible lg:gap-5 lg:pb-0 lg:sticky lg:top-32">
               {faqCategories.map((category) => {
                 const isActive = category.id === activeTab;
                 return (
@@ -145,7 +160,7 @@ export const TabbedFaq = () => {
                     )}
                     aria-pressed={isActive}
                   >
-                    <span className={clsx("text-large font-semibold text-white", !isActive && "opacity-30")}>
+                    <span className={clsx("text-medium font-semibold text-white", !isActive && "opacity-30")}>
                       {category.label}
                     </span>
                   </button>
@@ -155,7 +170,8 @@ export const TabbedFaq = () => {
           </div>
 
           <div className="flex-1">
-            <div className="mb-8 lg:mb-12">
+            {/* FAQ Heading - Only shown on desktop */}
+            <div className="mb-8 lg:mb-12 hidden lg:block">
               <div className="uppercase text-blueberry h2 text-stroke" style={{ textShadow: "4.57px 6.09px #eeebe2" }}>
                 FAQ
               </div>
@@ -178,7 +194,7 @@ export const TabbedFaq = () => {
                       aria-controls={panelId}
                       aria-expanded={isOpen}
                       onClick={() => toggleAccordion(index)}
-                      className="flex w-full items-center justify-between gap-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blueberry/60"
+                      className="flex w-full items-center justify-between gap-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blueberry/60 cursor-pointer"
                       type="button"
                     >
                       <div>
