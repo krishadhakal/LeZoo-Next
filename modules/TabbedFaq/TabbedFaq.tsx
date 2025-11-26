@@ -42,6 +42,21 @@ const faqCategories: FaqCategory[] = [
         answer:
           "Fearless curiosity. If you fall through the ground or see NPCs doing the funky walk, let us know. We want testers who try the edge cases, report bugs with context, and hype up the community as new attractions unlock.",
       },
+      {
+        question: "What do you look for in a playtester?",
+        answer:
+          "Fearless curiosity. If you fall through the ground or see NPCs doing the funky walk, let us know. We want testers who try the edge cases, report bugs with context, and hype up the community as new attractions unlock.",
+      },
+      {
+        question: "What do you look for in a playtester?",
+        answer:
+          "Fearless curiosity. If you fall through the ground or see NPCs doing the funky walk, let us know. We want testers who try the edge cases, report bugs with context, and hype up the community as new attractions unlock.",
+      },
+      {
+        question: "What do you look for in a playtester?",
+        answer:
+          "Fearless curiosity. If you fall through the ground or see NPCs doing the funky walk, let us know. We want testers who try the edge cases, report bugs with context, and hype up the community as new attractions unlock.",
+      },
     ],
   },
   {
@@ -134,18 +149,18 @@ export const TabbedFaq = () => {
   };
 
   return (
-    <section className="relative bg-raisin-black-2 py-16 lg:py-28 overflow-hidden">
+    <section className="relative bg-raisin-black-2 py-16 lg:py-28">
       <div className="container-xl mx-auto max-w-[1400px] px-6 relative z-10">
-        {/* FAQ Heading - Shown above tabs on mobile/tablet, inside content area on desktop */}
-        <div className="mb-8 lg:mb-0 lg:hidden">
+        {/* FAQ Heading - Always shown above tabs/content */}
+        <div className="mb-8 lg:mb-12 lg:ps-[calc(25%+4rem)]">
           <div className="uppercase text-blueberry h2 text-stroke" style={{ textShadow: "4.57px 6.09px #eeebe2" }}>
             FAQ
           </div>
         </div>
 
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
-          <div className="lg:w-1/4">
-            <div className="flex lg:gap-4 lg:bg-none overflow-x-auto rounded-[50px] lg:flex-col lg:overflow-visible lg:gap-5 lg:pb-0 lg:sticky lg:top-32">
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 lg:items-start">
+          <div className="w-full lg:w-1/4 lg:sticky lg:top-32 self-start z-20">
+            <div className="flex lg:gap-4 lg:bg-none overflow-x-auto rounded-[50px] lg:flex-col lg:overflow-visible lg:gap-5 bg-raisin-black-2 lg:bg-transparent pb-4 lg:pb-0">
               {faqCategories.map((category) => {
                 const isActive = category.id === activeTab;
                 return (
@@ -170,12 +185,6 @@ export const TabbedFaq = () => {
           </div>
 
           <div className="flex-1">
-            {/* FAQ Heading - Only shown on desktop */}
-            <div className="mb-8 lg:mb-12 hidden lg:block">
-              <div className="uppercase text-blueberry h2 text-stroke" style={{ textShadow: "4.57px 6.09px #eeebe2" }}>
-                FAQ
-              </div>
-            </div>
 
             <ul className="space-y-5">
               {activeCategory.faqs.map((faq, index) => {

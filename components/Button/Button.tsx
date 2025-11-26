@@ -7,12 +7,13 @@ type ButtonProps = {
   bgColorHover?: string;
   iconColor?: string;
   textColor?: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ variant, buttonText, bgColor="ivory", bgColorHover, iconColor, textColor="ivory" } : ButtonProps) => {
+export const Button = ({ variant, buttonText, bgColor="ivory", bgColorHover, iconColor, textColor="ivory", onClick } : ButtonProps) => {
   return (
     <>
-      <button className={clsx("relative cursor-pointer group", variant === "primary" ? "flex items-center gap-12 ps-12 pe-4 py-3 " : "", variant === "secondary" ? "flex items-center gap-12 ps-12 pe-4 py-3" : "", variant === "tertiary" ? "flex items-center w-[97px] h-[43px] justify-center" : "",  variant === "vertical" ? "flex items-center justify-center px-4 py-3 rotate-270" : "")}>
+      <button className={clsx("relative cursor-pointer group", variant === "primary" ? "flex items-center gap-12 ps-12 pe-4 py-3 " : "", variant === "secondary" ? "flex items-center gap-12 ps-12 pe-4 py-3" : "", variant === "tertiary" ? "flex items-center w-[97px] h-[43px] justify-center" : "",  variant === "vertical" ? "flex items-center justify-center px-4 py-3 rotate-270" : "")} onClick={onClick}>
         {variant === "primary" && (
           <div className="absolute inset-0 z-1 w-full h-full">
             <svg width="227" height="50" viewBox="0 0 227 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
