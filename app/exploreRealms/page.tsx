@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import clsx from "clsx";
 import { Button } from "@/components/Button/Button";
 import { DiscordBlueBg } from "@/components/Icon/Icon";
@@ -21,7 +22,7 @@ const realms: RealmCard[] = [
   {
     id: "culture-vulture",
     tag: "Middle",
-    category: "Middle | Human Form",
+    category: "Human Form",
     titleImage: "/images/culture-vulture.webp",
     mainImage: "/images/Culture_vulture_bg.webp",
     tags: ["M63", "M64", "M77", "M78"],
@@ -30,7 +31,7 @@ const realms: RealmCard[] = [
   {
     id: "heat",
     tag: "Dark",
-    category: "Dark | Central Hot Hell",
+    category: "Central Hot Hell",
     titleImage: "/images/heat-title.webp",
     mainImage: "/images/Heat.webp",
     tags: ["D44", "D54", "D55", "D56", "D57", "D64", "D65", "D66", "D67"],
@@ -39,7 +40,7 @@ const realms: RealmCard[] = [
   {
     id: "screaming",
     tag: "Dark",
-    category: "Dark | Central Hot Hell",
+    category: "Central Hot Hell",
     titleImage: "/images/screaming-title.webp",
     mainImage: "/images/screaming.webp",
     tags: ["D34", "D35", "D45", "D46", "D47"],
@@ -48,7 +49,7 @@ const realms: RealmCard[] = [
   {
     id: "thousand-percent",
     tag: "Bright",
-    category: "Bright | Powers",
+    category: "Powers",
     titleImage: "/images/1000percent.webp",
     mainImage: "/images/1000percent-img.webp",
     tags: ["D34", "D35", "D45", "D46", "D47"],
@@ -57,7 +58,7 @@ const realms: RealmCard[] = [
   {
     id: "beauty-queen",
     tag: "Middle",
-    category: "Middle | Human Form",
+    category: "Human Form",
     titleImage: "/images/beauty-queen-title.webp",
     mainImage: "/images/beauty-queen.webp",
     tags: ["M63", "M64", "M77", "M78"],
@@ -66,7 +67,7 @@ const realms: RealmCard[] = [
   {
     id: "corpse-rot",
     tag: "Dark",
-    category: "Dark | Surrounding Hot Hell",
+    category: "Surrounding Hot Hell",
     titleImage: "/images/corpse-title.webp",
     mainImage: "/images/corpse-rot.webp",
     tags: ["D44", "D54", "D55", "D56", "D57"],
@@ -75,7 +76,7 @@ const realms: RealmCard[] = [
   {
     id: "infinity",
     tag: "Bright",
-    category: "Bright | Infinity",
+    category: "Infinity",
     titleImage: "/images/infinity.webp",
     mainImage: "/images/house-of-infinity.webp",
     tags: ["B96"],
@@ -84,7 +85,7 @@ const realms: RealmCard[] = [
   {
     id: "gather-smash",
     tag: "Dark",
-    category: "Dark | Central Hell",
+    category: "Central Hell",
     titleImage: "/images/gather-smash-title.webp",
     mainImage: "/images/gather-smash.webp",
     tags: ["D34", "D35", "D45", "D46", "D47"],
@@ -93,7 +94,7 @@ const realms: RealmCard[] = [
   {
     id: "jewels",
     tag: "Bright",
-    category: "Bright | Jewels",
+    category: "Jewels",
     titleImage: "/images/jewels-title.webp",
     mainImage: "/images/house-of-jewels.webp",
     tags: ["B49"],
@@ -138,10 +139,13 @@ export default function ExploreRealms() {
       <div className="container mx-auto px-0 md:px-10">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-30">
-          <img
+          <Image
             src="/images/hoods-gallery-bg.webp"
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            quality={60}
+            priority={false}
           />
         </div>
 
@@ -187,7 +191,7 @@ export default function ExploreRealms() {
 
           {/* Realm Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
-            {displayedRealms.map((realm) => (
+            {displayedRealms.map((realm, index) => (
               <div key={realm.id} className="flex flex-col">
 
                 {/* Category Label */}
@@ -202,20 +206,29 @@ export default function ExploreRealms() {
                 </div>
 
                 {/* Title Image */}
-                <div className="mb-6 flex justify-start ms-4">
-                  <img
+                <div className="mb-6 flex justify-start ms-4 relative h-[110px]">
+                  <Image
                     src={realm.titleImage}
                     alt={`${realm.id} title`}
-                    className="h-auto max-w-[280px] object-contain aspect-[254/156]"
+                    width={280}
+                    height={174}
+                    className="h-auto max-w-[280px] object-contain"
+                    priority={index < 3}
+                    quality={85}
+                    sizes="280px"
                   />
                 </div>
 
                 {/* Main Realm Image with Tags Overlay */}
-                <div className="relative -mt-[13%] -z-1">
-                  <img
+                <div className="relative -mt-[13%] -z-1 aspect-[390/510]">
+                  <Image
                     src={realm.mainImage}
                     alt={`${realm.id} realm image`}
-                    className="w-full h-auto object-cover aspect-[390/510]"
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
 
                   {/* Tag Pills - Positioned at bottom of image */}
