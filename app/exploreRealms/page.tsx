@@ -206,13 +206,13 @@ export default function ExploreRealms() {
                 </div>
 
                 {/* Title Image */}
-                <div className="mb-6 flex justify-start ms-4 relative h-[110px]">
+                <div className="mb-6 flex justify-start ms-4 relative">
                   <Image
                     src={realm.titleImage}
                     alt={`${realm.id} title`}
                     width={280}
                     height={174}
-                    className="h-auto max-w-[280px] object-contain"
+                    className="h-auto max-w-[254px] object-contain aspect-[254/156]"
                     priority={index < 3}
                     quality={85}
                     sizes="280px"
