@@ -29,10 +29,12 @@ export const ThreeCards = () => {
       <div className='container max-w-[1400px] mx-auto'>
         {/* Background Image */}
         <div className="absolute -top-[6%] left-0 right-0 hidden lg:block w-full h-full">
-        <img
+          <img
             src="/images/irl-background.webp"
             alt="IRL Prizes Background"
             className="w-full h-full"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

@@ -8,16 +8,29 @@ import { Footer } from "@/components/Footer/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Playtest | Lezoo",
   description: "Apply to become a playtester for Le Zoo where you can win rewards, be a part of an exclusive discord channel and impact how Le Zoo gets built!",
+  keywords: ["Le Zoo", "Playtest", "Gaming", "Mobile Game", "Beta Testing"],
+  authors: [{ name: "Le Zoo Team" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +40,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical hero image for better LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/playtest-leadspace.webp"
+          type="image/webp"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${casaGrande.variable} ${strawFord.variable} ${atomicMarker.variable} antialiased`}
       >
