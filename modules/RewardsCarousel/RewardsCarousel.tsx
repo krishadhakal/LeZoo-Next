@@ -1,8 +1,21 @@
 "use client";
 
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import dynamic from 'next/dynamic';
+import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+
+// Dynamically import Swiper for better code splitting
+const DynamicSwiper = dynamic(
+  () => import('swiper/react').then((mod) => mod.Swiper),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex justify-center items-center h-[336px]">
+        <div className="animate-pulse bg-space-cadet-2 rounded-2xl w-[215px] h-[336px]" />
+      </div>
+    ),
+  }
+);
 
 export const RewardsCarousel = () => {
   const cards = [
@@ -23,6 +36,8 @@ export const RewardsCarousel = () => {
           src="/images/reward-bg.webp"
           alt="Rewards Background"
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -34,6 +49,8 @@ export const RewardsCarousel = () => {
               src="/images/duck.webp"
               alt="Get Rewarded Duck"
               className="w-full h-full"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className='col-start-1 col-end-1 row-start-1 row-end-1'>
@@ -73,16 +90,13 @@ export const RewardsCarousel = () => {
               key={index}
               className="flex flex-col items-center justify-center bg-space-cadet-2 rounded-2xl p-6 w-[240px] h-[336px]"
             >
-              <div className="relative w-full h-full mb-4">
-                <Image
-                  src={card.image}
-                  alt={card.label}
-                  fill
-                  className="object-contain"
-                  quality={85}
-                  sizes="240px"
-                />
-              </div>
+              <img
+                src={card.image}
+                alt={card.label}
+                className="w-full h-full object-contain mb-4"
+                loading="lazy"
+                decoding="async"
+              />
               <p className="text-white text-body-text font-bold text-center">
                 {card.label}
               </p>
@@ -92,7 +106,7 @@ export const RewardsCarousel = () => {
 
         {/* Mobile & Tablet - Swiper */}
         <div className="xl:hidden overflow-hidden flex justify-center">
-          <Swiper
+          <DynamicSwiper
             loop={true}
             centeredSlides={true}
             slidesPerView="auto"
@@ -102,25 +116,22 @@ export const RewardsCarousel = () => {
             className="rewards-swiper !overflow-visible max-w-full"
           >
             {[...cards, ...cards].map((card, index) => (
-              <SwiperSlide key={index} className="flex justify-center !w-auto scale-[0.84] !transition-all duration-300 ease-in-out overflow-hidden [&.swiper-slide-active]:scale-100!">
+              <SwiperSlide key={index} className="flex justify-center !w-auto scale-[0.84] !transition-all duration-300 ease-in-out overflow-hidden [&.swiper-slide-active]:scale-100!" style={{ willChange: 'transform' }}>
                 <div className="flex flex-col items-center justify-center bg-space-cadet-2 rounded-2xl p-6 w-[215px] h-[336px]">
-                  <div className="relative w-full h-full mb-4">
-                    <Image
-                      src={card.image}
-                      alt={card.label}
-                      fill
-                      className="object-contain"
-                      quality={85}
-                      sizes="215px"
-                    />
-                  </div>
+                  <img
+                    src={card.image}
+                    alt={card.label}
+                    className="w-full h-full object-contain mb-4"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <p className="text-white text-body-text font-bold text-center">
                     {card.label}
                   </p>
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </DynamicSwiper>
         </div>
       </div>
       </div>

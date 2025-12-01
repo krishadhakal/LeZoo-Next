@@ -21,6 +21,8 @@ export const FiftyFiftySection = () => {
                 src="/images/pt-skip-the-line.webp"
                 alt="Skip the Line - Zootbook Mobile Screens"
                 className="w-full h-auto drop-shadow-2xl"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
