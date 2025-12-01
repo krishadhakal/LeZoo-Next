@@ -31,6 +31,21 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: "Playtest | Le Zoo",
+    description: "Join Le Zoo's playtest program. Win prizes, access exclusive Discord channels, and shape the future of the game!",
+    type: "website",
+    url: "https://lezoo.com",
+    siteName: "Le Zoo",
+    images: [
+      {
+        url: "/images/playtest-leadspace.webp",
+        width: 1200,
+        height: 630,
+        alt: "Le Zoo Playtest Program",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
