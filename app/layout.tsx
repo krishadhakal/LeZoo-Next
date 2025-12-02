@@ -27,10 +27,6 @@ export const metadata: Metadata = {
     initialScale: 1,
     maximumScale: 5,
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
   openGraph: {
     title: "Playtest | Le Zoo",
     description: "Join Le Zoo's playtest program. Win prizes, access exclusive Discord channels, and shape the future of the game!",
