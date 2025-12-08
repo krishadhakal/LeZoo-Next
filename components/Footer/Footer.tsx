@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Instagram, Tiktok, Discord, Twitter, SmsIcon } from "@/components/Icon/Icon";
 
 export const Footer = () => {
@@ -30,21 +31,21 @@ export const Footer = () => {
 
           {/* Navigation Links */}
           <nav className="flex flex-col gap-8 mb-16">
-            <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+            <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
               Playtest Signup
-            </a>
-            <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+            </Link>
+            <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
               The 5 Houses
-            </a>
-            <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+            </Link>
+            <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
               House Quiz
-            </a>
-            <a href="/exploreRealms" className="text-white text-small hover:opacity-80 transition-opacity">
+            </Link>
+            <Link href="/exploreRealms" className="text-white text-small hover:opacity-80 transition-opacity">
               Realms
-            </a>
-            <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+            </Link>
+            <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
               About
-            </a>
+            </Link>
           </nav>
 
           {/* Logo */}
@@ -146,21 +147,21 @@ export const Footer = () => {
 
             {/* Navigation Links */}
             <nav className="flex flex-col items-start gap-6">
-              <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+              <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
                 Playtest Signup
-              </a>
-              <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+              </Link>
+              <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
                 The 5 Houses
-              </a>
-              <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+              </Link>
+              <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
                 House Quiz
-              </a>
-              <a href="/exploreRealms" className="text-white text-small hover:opacity-80 transition-opacity">
+              </Link>
+              <Link href="/exploreRealms" className="text-white text-small hover:opacity-80 transition-opacity">
                 Realms
-              </a>
-              <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+              </Link>
+              <Link href="#" className="text-white text-small hover:opacity-80 transition-opacity">
                 About
-              </a>
+              </Link>
             </nav>
           </div>
         </div>

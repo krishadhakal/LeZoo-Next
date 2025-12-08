@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "../Button/Button";
 import { DownArrow, HamburgerIcon, CloseIcon, Instagram, Tiktok, Discord, Twitter } from "@/components/Icon/Icon";
@@ -32,7 +33,7 @@ export const Header = () => {
             </button>
 
             {/* Logo - Left on desktop, center on tablet, left on mobile */}
-            <div className="lg:order-0 md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 lg:static lg:translate-x-0 order-1">
+            <Link href="/" className="lg:order-0 md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 lg:static lg:translate-x-0 order-1">
               <Image
                 src="/images/lezoo-logo.webp"
                 alt="Le Zoo Logo"
@@ -40,7 +41,7 @@ export const Header = () => {
                 height={60}
                 className="h-auto w-[90px] md:w-[80px]"
               />
-            </div>
+            </Link>
 
             {/* Desktop Menu - Only visible on desktop */}
             <div className="hidden lg:flex items-center gap-8 mx-auto">
@@ -60,46 +61,46 @@ export const Header = () => {
                 {/* Dropdown Menu */}
                 <div className="absolute top-full left-0 mt-2 w-auto bg-gunmetal-2/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 backdrop-blur-sm">
                   <div className="py-2">
-                    <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    <Link href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       The 5 Houses
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    </Link>
+                    <Link href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       The 5 Guides
-                    </a>
-                    <a href="/exploreRealms" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    </Link>
+                    <Link href="/exploreRealms" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       Explore Realms
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    </Link>
+                    <Link href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       What&apos;s Karma?
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    </Link>
+                    <Link href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       FAQ
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    </Link>
+                    <Link href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       About
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
 
-              <a href="#" className="relative group text-small text-white transition-all">
+              <Link href="#" className="relative group text-small text-white transition-all">
                 House Quiz
                 <span className="absolute left-0 -bottom-1 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity">
                   <Image src="/images/hover.webp" alt="" fill />
                 </span>
-              </a>
-              <a href="/" className="relative group text-small text-white transition-all">
+              </Link>
+              <Link href="/" className="relative group text-small text-white transition-all">
                 Playtest
                 <span className="absolute left-0 -bottom-1 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity">
                   <Image src="/images/hover.webp" alt="" fill />
                 </span>
-              </a>
-              <a href="#" className="relative group text-small text-white transition-all">
+              </Link>
+              <Link href="#" className="relative group text-small text-white transition-all">
                 Super Zoot
                 <span className="absolute left-0 -bottom-1 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity">
                   <Image src="/images/hover.webp" alt="" fill />
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* Auth Buttons - Only visible on desktop */}
@@ -129,7 +130,7 @@ export const Header = () => {
               </button>
 
               {/* Logo - Left on mobile, center on tablet */}
-              <div className="md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 order-1">
+              <Link href="/" className="md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 order-1">
                 <Image
                   src="/images/lezoo-logo.webp"
                   alt="Le Zoo Logo"
@@ -137,20 +138,20 @@ export const Header = () => {
                   height={60}
                   className="h-auto w-[90px] md:w-[80px]"
                 />
-              </div>
+              </Link>
             </div>
 
             {/* Menu Items */}
             <div className="flex flex-col gap-6 mt-12">
-              <a href="/" className="text-small text-green-apple hover:opacity-80 transition-opacity">
+              <Link href="/" className="text-small text-green-apple hover:opacity-80 transition-opacity">
                 Playtest
-              </a>
-              <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+              </Link>
+              <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                 House Quiz
-              </a>
-              <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+              </Link>
+              <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                 Super Zoot
-              </a>
+              </Link>
 
               {/* About Le Zoo Dropdown */}
               <div>
@@ -165,21 +166,21 @@ export const Header = () => {
                 {/* Submenu */}
                 {isDropdownOpen && (
                   <div className="ml-4 mt-4 flex flex-col gap-4">
-                    <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; The 5 Houses
-                    </a>
-                    <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    </Link>
+                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; The 5 Guides
-                    </a>
-                    <a href="/exploreRealms" className="text-small text-white hover:opacity-80 transition-opacity">
+                    </Link>
+                    <Link href="/exploreRealms" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; Explore Realms
-                    </a>
-                    <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    </Link>
+                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; FAQ
-                    </a>
-                    <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    </Link>
+                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; What&apos;s Karma?
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
