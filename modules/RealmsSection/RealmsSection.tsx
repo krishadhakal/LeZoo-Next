@@ -101,12 +101,12 @@ export const RealmsSection = () => {
               </div>
 
               {/* Realm Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 grid-rows-[auto]">
                 {realmsData && realmsData.length > 0
                   ? realmsData.map((realm: RealmCard, index: number) => (
-                      <div key={realm.id} className="flex flex-col">
-                        {/* Category Label */}
-                        <div className="flex items-center gap-[15px] mb-6 ms-4">
+                      <div key={realm.id} className="grid grid-rows-subgrid row-[span_4] gap-0">
+                        {/* Category Label*/}
+                        <div className="flex items-start gap-[15px] mb-6 ms-4">
                           <p className="text-white text-extra-small uppercase tracking-tight font-bold">
                             {realm.realmType?.name || "Unknown"}
                           </p>
@@ -117,7 +117,7 @@ export const RealmsSection = () => {
                         </div>
 
                         {/* Title Image */}
-                        <div className="mb-6 flex items-start justify-between ms-4 me-2 lg:me-0 relative">
+                        <div className="mb-6 flex items-start justify-between ms-4 me-2 lg:me-0 relative h-[156px]">
                           {realm.realmLogo && (
                             <Image
                               src={realm.realmLogo.imageSrc}
@@ -142,7 +142,7 @@ export const RealmsSection = () => {
                         </div>
 
                         {/* Main Realm Image with Tags Overlay */}
-                        <div className="relative -mt-[13%] -z-1 aspect-390/510">
+                        <div className="relative -mt-[13%] -z-1 aspect-390/510 shrink-0">
                           {realm.featuredImage && (
                             <Image
                               src={realm.featuredImage.imageSrc}
