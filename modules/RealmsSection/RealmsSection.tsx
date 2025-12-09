@@ -13,6 +13,7 @@ export const RealmsSection = () => {
   const {
     data: realmsData,
     loading,
+    isLoadingMore,
     error,
     hasMore,
     loadMore,
@@ -184,7 +185,7 @@ export const RealmsSection = () => {
                 <div className="flex justify-center mt-12">
                   <Button
                     variant="primary"
-                    buttonText="LOAD MORE"
+                    buttonText={isLoadingMore ? "LOADING..." : "LOAD MORE"}
                     textColor="cloud-brust"
                     onClick={loadMore}
                   />

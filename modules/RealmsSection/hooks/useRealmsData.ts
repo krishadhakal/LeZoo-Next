@@ -1,105 +1,143 @@
-import { useState, useEffect } from "react";
-import { getRealmsData } from "../apis/realms-data.api";
+import useSWRInfinite from "swr/infinite";
+import { useMemo, useCallback, useEffect } from "react";
 
 interface RealmTypeInterface {
-  id    : number | string;
-  name  : string;
+  id: number | string;
+  name: string;
 }
 
 interface RealmImageType {
-  imageSrc      : string;
-  imageSrcSet   : string;
-  imageAlt      : string;
-  imageRatio    : string | number;
+  imageSrc: string;
+  imageSrcSet: string;
+  imageAlt: string;
+  imageRatio: string | number;
 }
 
 export type RealmCard = {
-  id                    : number | string;
-  title                 : string;
-  realmType             : RealmTypeInterface | null;
-  realmHouse            : string | null
-  featuredImage         : RealmImageType | null;
-  realmLogo             : RealmImageType | null;
-  hoodTagsData          : string[] | null;
-  isUnderConstruction   : boolean;
+  id: number | string;
+  title: string;
+  realmType: RealmTypeInterface | null;
+  realmHouse: string | null;
+  featuredImage: RealmImageType | null;
+  realmLogo: RealmImageType | null;
+  hoodTagsData: string[] | null;
+  isUnderConstruction: boolean;
 };
 
 type UseRealmsDataReturn = {
-  data          : RealmCard[] | null;
-  loading       : boolean;
-  error         : string | null;
-  currentPage   : number;
-  totalPages    : number;
-  hasMore       : boolean;
-  loadMore      : () => void;
+  data: RealmCard[] | null;
+  loading: boolean;
+  error: string | null;
+  currentPage: number;
+  totalPages: number;
+  hasMore: boolean;
+  loadMore: () => void;
+  isLoadingMore: boolean;
 };
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export const useRealmsData = (
   filterType: string | null
 ): UseRealmsDataReturn => {
-  const [data, setData] = useState<RealmCard[] | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(1);
-
   const perPage = 6;
 
-  const fetchRealms = async (page: number) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await getRealmsData({
-        filterType,
-        page,
-        perPage,
-      });
-
-      const realmsArray = Array.isArray(response?.data)
-        ? response?.data
-        : response?.data.realms || [];
-
-      if (page === 1) {
-        setData(realmsArray.length > 0 ? realmsArray : null);
-      } else {
-        setData((prevData) => [...(prevData ?? []), ...realmsArray]);
+  const getKey = useCallback(
+    (
+      pageIndex: number,
+      previousPageData: { data?: RealmCard[]; totalPages?: string } | null
+    ) => {
+      // Stop when previous page returned no data
+      if (
+        previousPageData &&
+        (!previousPageData.data || previousPageData.data.length === 0)
+      ) {
+        return null;
       }
 
-      const pages =
-        typeof response?.totalPages === "string" && response.totalPages.trim() !== ""
-          ? parseInt(response.totalPages, 10) || 1
-          : 1;
-      setTotalPages(pages);
-      setCurrentPage(page);
-    } catch (err) {
-      setError(`Failed to load realms ${err}`);
-
-      if (page === 1) {
-        setData(null);
+      const params = new URLSearchParams();
+      params.append("page", String(pageIndex + 1));
+      params.append("per_page", String(perPage));
+      if (filterType) {
+        params.append("type", filterType);
       }
-    } finally {
-      setLoading(false);
-    }
-  };
+      return `/api/realms?${params.toString()}`;
+    },
+    [filterType]
+  );
 
-  // Fetch data when filterType changes (reset to page 1)
+  const {
+    data: swrData,
+    error: swrError,
+    size,
+    setSize,
+    isLoading,
+  } = useSWRInfinite(getKey, fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    dedupingInterval: 2000,
+  });
+
   useEffect(() => {
-    fetchRealms(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filterType]);
+    // Reset pagination when filter changes
+    setSize(1);
+  }, [filterType, setSize]);
 
-  const handleLoadMore = () => {
-    const nextPage = currentPage + 1;
-    if (nextPage <= totalPages) {
-      fetchRealms(nextPage);
+  // Combine data from all pages
+  const accumulatedData = useMemo(() => {
+    if (!swrData) return [];
+
+    const allData: RealmCard[] = [];
+    const seenIds = new Set();
+
+    for (const page of swrData) {
+      if (page?.data) {
+        const realmsArray = Array.isArray(page.data)
+          ? page.data
+          : page.data.realms || [];
+
+        realmsArray.forEach((item: RealmCard) => {
+          if (!seenIds.has(item.id)) {
+            seenIds.add(item.id);
+            allData.push(item);
+          }
+        });
+      }
     }
-  };
 
+    return allData;
+  }, [swrData]);
+
+  // Get total pages from the first response
+  const totalPages = useMemo(() => {
+    const firstResponse = swrData?.[0];
+    if (!firstResponse) return 1;
+
+    const pages =
+      typeof firstResponse.totalPages === "string" &&
+      firstResponse.totalPages.trim() !== ""
+        ? parseInt(firstResponse.totalPages, 10) || 1
+        : 1;
+    return pages;
+  }, [swrData]);
+
+  const isInitialLoading = !swrData && !swrError;
+  const isLoadingMore = isLoading && size > 1;
+  const error = swrError ? `Failed to load realms: ${swrError.message}` : null;
+
+  const currentPage = size;
   const hasMore = currentPage < totalPages;
 
+  const handleLoadMore = useCallback(() => {
+    if (hasMore && !isLoadingMore) {
+      setSize((prev) => prev + 1);
+    }
+  }, [hasMore, isLoadingMore, setSize]);
+
   return {
-    data,
-    loading,
+    data: accumulatedData.length > 0 ? accumulatedData : null,
+    loading: isInitialLoading,
+    isLoadingMore,
     error,
     currentPage,
     totalPages,
