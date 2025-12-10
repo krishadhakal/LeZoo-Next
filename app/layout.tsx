@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Playtest | Lezoo",
+  title: "Home | Lezoo",
   description:
-    "Apply to become a playtester for Le Zoo where you can win rewards, be a part of an exclusive discord channel and impact how Le Zoo gets built!",
-  keywords: ["Le Zoo", "Playtest", "Gaming", "Mobile Game", "Beta Testing"],
+    "Le Zoo. Le Zoo is a 3D mobile free-to-play social multi-player game, combining hyper-casual mini games, battles, strategy, and turn-based RPG mechanics.",
+  keywords: ["Le Zoo", "Home", "Gaming", "Mobile Game", "Beta Testing"],
   authors: [{ name: "Le Zoo Team" }],
   viewport: {
     width: "device-width",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description:
       "Join Le Zoo's playtest program. Win prizes, access exclusive Discord channels, and shape the future of the game!",
     type: "website",
-    url: "https://lezoo.com",
+    url: "https://lezoo.mothergames.com",
     siteName: "Le Zoo",
     images: [
       {

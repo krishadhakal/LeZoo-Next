@@ -89,7 +89,7 @@ export const Header = () => {
                   <Image src="/images/hover.webp" alt="" fill />
                 </span>
               </Link>
-              <Link href="/" className="relative group text-small text-white transition-all">
+              <Link href="/playtest" className="relative group text-small text-white transition-all">
                 Playtest
                 <span className="absolute left-0 -bottom-1 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity">
                   <Image src="/images/hover.webp" alt="" fill />
@@ -143,7 +143,7 @@ export const Header = () => {
 
             {/* Menu Items */}
             <div className="flex flex-col gap-6 mt-12">
-              <Link href="/" className="text-small text-green-apple hover:opacity-80 transition-opacity">
+              <Link href="/playtest" className="text-small text-green-apple hover:opacity-80 transition-opacity">
                 Playtest
               </Link>
               <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
