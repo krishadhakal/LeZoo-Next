@@ -73,6 +73,8 @@ const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, vari
           ) : (
             <input
               type="email"
+              name="email"
+              id={`email-${variant}`}
               value={email}
               onChange={(e) => onEmailChange(e.target.value)}
               placeholder={TEXT_CONTENT.form.placeholder}
@@ -83,6 +85,7 @@ const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, vari
               }`}
               required
               aria-label={TEXT_CONTENT.form.placeholder}
+              autoComplete="email"
             />
           )}
 
