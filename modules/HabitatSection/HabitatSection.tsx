@@ -61,7 +61,7 @@ export const HabitatSection = () => {
 
                 {/* Body Copy */}
                 <p className="text-white text-[18px] font-bold font-strawford max-w-[500px] leading-[140%]">
-                  This isn't just a place to live — think of it as your own corner of the universe, waiting for you to customize every square inch.
+                  This isn&apos;t just a place to live — think of it as your own corner of the universe, waiting for you to customize every square inch.
                 </p>
               </div>
             </div>

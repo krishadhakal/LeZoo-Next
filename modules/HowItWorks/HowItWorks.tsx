@@ -3,33 +3,6 @@
 import { Button } from '@/components/Button/Button';
 
 export const HowItWorks = () => {
-  const steps = [
-    {
-      number: 1,
-      title: "Apply to a Hard Hat Tour",
-      badge: "APPLY TO GET INVITED",
-      image: "/images/apply-lets.webp",
-    },
-    {
-      number: 2,
-      title: "Create your Zootbook",
-      badge: "BECOME A SUPER ZOOT",
-      image: "/images/goat-lets.webp",
-    },
-    {
-      number: 3,
-      title: "Enter the Park",
-      badge: "JOIN THE HARD HAT TOUR",
-      image: "/images/hard-tour.webp",
-    },
-    {
-      number: 4,
-      title: "Rewards",
-      badge: "GET REWARDED",
-      image: "/images/rewards.webp",
-    },
-  ];
-
   return (
     <section className="w-full relative py-16 lg:py-24">
       <div className='container max-w-[1440px] mx-auto'>
@@ -37,7 +10,7 @@ export const HowItWorks = () => {
           {/* Section Header */}
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="h3 text-ivory text-shadow-1 text-stroke" style={{ '--text-shadow-1-color': 'black' } as React.CSSProperties}>
-              LET'S SEE
+              LET&apos;S SEE
             </h3>
 
             {/* Main Headline */}
@@ -176,8 +149,7 @@ export const HowItWorks = () => {
               variant="primary"
               buttonText="APPLY NOW"
               textColor="cloud-brust"
-            >
-            </Button>
+            />
           </div>
         </div>
 

@@ -105,8 +105,7 @@ export const ThreeCards = () => {
             variant="primary"
             buttonText="INVITE FRIENDS"
             textColor="cloud-brust"
-          >
-          </Button>
+          />
         </div>
       </div>
     </section>
