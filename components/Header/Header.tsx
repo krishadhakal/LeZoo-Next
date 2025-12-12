@@ -3,20 +3,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "../Button/Button";
 import { DownArrow, HamburgerIcon, CloseIcon, Instagram, Tiktok, Discord, Twitter } from "@/components/Icon/Icon";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
@@ -113,7 +121,7 @@ export const Header = () => {
 
         {/* Mobile/Tablet Full Screen Menu */}
         <div
-          className={`fixed inset-0 bg-gunmetal-2 lg:hidden transition-all duration-300 ${
+          className={`fixed inset-0 bg-gunmetal-2 lg:hidden transition-all duration-300 z-60 ${
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
         >
@@ -130,7 +138,7 @@ export const Header = () => {
               </button>
 
               {/* Logo - Left on mobile, center on tablet */}
-              <Link href="/" className="md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 order-1">
+              <Link href="/" className="md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 order-1" onClick={closeMenu}>
                 <Image
                   src="/images/lezoo-logo.webp"
                   alt="Le Zoo Logo"
@@ -143,13 +151,13 @@ export const Header = () => {
 
             {/* Menu Items */}
             <div className="flex flex-col gap-6 mt-12">
-              <Link href="/playtest" className="text-small text-green-apple hover:opacity-80 transition-opacity">
+              <Link href="/playtest" className={`text-small hover:opacity-80 transition-opacity ${isActive('/playtest') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                 Playtest
               </Link>
-              <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+              <Link href="#" className={`text-small hover:opacity-80 transition-opacity ${isActive('#') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                 House Quiz
               </Link>
-              <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+              <Link href="#" className={`text-small hover:opacity-80 transition-opacity ${isActive('#super-zoot') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                 Super Zoot
               </Link>
 
@@ -166,19 +174,19 @@ export const Header = () => {
                 {/* Submenu */}
                 {isDropdownOpen && (
                   <div className="ml-4 mt-4 flex flex-col gap-4">
-                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <Link href="#" className={`text-small hover:opacity-80 transition-opacity ${isActive('#houses') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                       &gt; The 5 Houses
                     </Link>
-                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <Link href="#" className={`text-small hover:opacity-80 transition-opacity ${isActive('#guides') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                       &gt; The 5 Guides
                     </Link>
-                    <Link href="/exploreRealms" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <Link href="/exploreRealms" className={`text-small hover:opacity-80 transition-opacity ${isActive('/exploreRealms') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                       &gt; Explore Realms
                     </Link>
-                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <Link href="#" className={`text-small hover:opacity-80 transition-opacity ${isActive('#faq') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                       &gt; FAQ
                     </Link>
-                    <Link href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <Link href="#" className={`text-small hover:opacity-80 transition-opacity ${isActive('#karma') ? 'text-green-apple' : 'text-white'}`} onClick={closeMenu}>
                       &gt; What&apos;s Karma?
                     </Link>
                   </div>

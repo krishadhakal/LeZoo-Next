@@ -99,7 +99,7 @@ export const RolesCarousel = () => {
           border-radius: 4px;
         }
       `}</style>
-      <div className="container mx-auto max-w-[1400px] px-6 relative z-1">
+      <div className="container mx-auto max-w-[1400px] px-6 relative z-1 overflow-hidden md:overflow-visible">
         <div className="flex flex-col lg:flex-row gap-14 xl:gap-24 items-center">
           {/* Left Column - Swiper */}
           <div className="w-full lg:w-1/2 flex flex-col items-center gap-8">
