@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     maximumScale: 5,
   },
   openGraph: {
-    title: "Playtest | Le Zoo",
+    title: "Home | Le Zoo",
     description:
-      "Join Le Zoo's playtest program. Win prizes, access exclusive Discord channels, and shape the future of the game!",
+      "Le Zoo. Le Zoo is a 3D mobile free-to-play social multi-player game, combining hyper-casual mini games, battles, strategy, and turn-based RPG mechanics.",
     type: "website",
     url: "https://lezoo.mothergames.com",
     siteName: "Le Zoo",

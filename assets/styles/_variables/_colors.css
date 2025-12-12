@@ -2,6 +2,7 @@
   /* Auto-generated from app/color.tsx */
   --alabaster: #eeebe2;
   --aquamarine: #10ffb5;
+  --african-violet: #cb8dbe;
   --black: #000000;
   --black-2: #020404;
   --black-35: #00000059;
@@ -58,6 +59,7 @@
   --white: #ffffff;
   --light-red-100: #fc4382;
   --raisin-black-2: #1b1b28;
+  --raisin-black-3: #222335;
   --space-cadet-2: #2c2c42;
   --blue-gray: #28283a;
   --dark-indigo : #222335;
@@ -69,6 +71,7 @@
 }
 
 @theme {
+  --color-african-violet: var(--african-violet);
   --color-alabaster: var(--alabaster);
   --color-aquamarine: var(--aquamarine);
   --color-black-2: var(--black-2);
@@ -129,4 +132,5 @@
   --color-space-cadet-2: var(--space-cadet-2);
   --color-blue-gray: var(--blue-gray);
   --color-dark-indigo: var(--dark-indigo);
+  --color-raisin-black-3: var(--raisin-black-3);
 }
